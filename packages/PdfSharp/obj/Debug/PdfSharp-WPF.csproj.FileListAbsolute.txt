@@ -1,0 +1,12 @@
+R:\Project\DP\packages\PdfSharp\bin\Debug\PdfSharp-WPF.XML
+R:\Project\DP\packages\PdfSharp\bin\Debug\PdfSharp-WPF.dll
+R:\Project\DP\packages\PdfSharp\bin\Debug\PdfSharp-WPF.pdb
+R:\Project\DP\packages\PdfSharp\bin\Debug\de\PdfSharp-WPF.resources.dll
+R:\Project\DP\packages\PdfSharp\obj\Debug\PdfSharp-WPF.csprojResolveAssemblyReference.cache
+R:\Project\DP\packages\PdfSharp\obj\Debug\PdfSharp.Resources.Messages.resources
+R:\Project\DP\packages\PdfSharp\obj\Debug\PdfSharp.Resources.Messages.de.resources
+R:\Project\DP\packages\PdfSharp\obj\Debug\PdfSharp-WPF.csproj.GenerateResource.Cache
+R:\Project\DP\packages\PdfSharp\obj\Debug\PdfSharp-WPF.csproj.CoreCompileInputs.cache
+R:\Project\DP\packages\PdfSharp\obj\Debug\de\PdfSharp-WPF.resources.dll
+R:\Project\DP\packages\PdfSharp\obj\Debug\PdfSharp-WPF.dll
+R:\Project\DP\packages\PdfSharp\obj\Debug\PdfSharp-WPF.pdb

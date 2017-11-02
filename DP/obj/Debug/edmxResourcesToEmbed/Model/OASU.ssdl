@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище OASUModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccesRights">
+    <Key>
+      <PropertyRef Name="AccesRightID" />
+    </Key>
+    <Property Name="Sub_System_ID" Type="int" />
+    <Property Name="AccesRightID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PS_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Computers">
+    <Key>
+      <PropertyRef Name="Computer_ID" />
+    </Key>
+    <Property Name="Inventory_number" Type="int" Nullable="false" />
+    <Property Name="Computer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Net_Name" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="Department_ID" />
+    </Key>
+    <Property Name="Name_Department" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Department_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Developers">
+    <Key>
+      <PropertyRef Name="Developer_part_ID" />
+    </Key>
+    <Property Name="Employee_ID" Type="int" />
+    <Property Name="Developer_part_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_start" Type="datetime" />
+    <Property Name="Record_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="Document_ID" />
+    </Key>
+    <Property Name="Document_Number" Type="varchar" MaxLength="15" />
+    <Property Name="Document_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Document_Date" Type="datetime" />
+    <Property Name="Document_type_ID" Type="int" />
+    <Property Name="PS_ID" Type="int" />
+    <Property Name="DocumentFile" Type="varbinary(max)" />
+    <Property Name="File_Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="DocumentTypes">
+    <Key>
+      <PropertyRef Name="Document_type_ID" />
+    </Key>
+    <Property Name="Name_document_type" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Document_type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Employee_ID" />
+    </Key>
+    <Property Name="Office_ID" Type="int" />
+    <Property Name="Employee_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Full_Name_Employee" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Personnel_Number" Type="int" Nullable="false" />
+    <Property Name="Profession_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Offices">
+    <Key>
+      <PropertyRef Name="Office_ID" />
+    </Key>
+    <Property Name="Name_Office" Type="varchar" MaxLength="200" />
+    <Property Name="Office_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Department_ID" Type="int" Nullable="false" />
+    <Property Name="Backward_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="PrgLangs">
+    <Key>
+      <PropertyRef Name="Prg_Lang_ID" />
+    </Key>
+    <Property Name="Prg_Lang" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Prg_Lang_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrgSystems">
+    <Key>
+      <PropertyRef Name="PS_ID" />
+    </Key>
+    <Property Name="PS_Name" Type="varchar" MaxLength="200" />
+    <Property Name="PS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Prg_Lang_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Professions">
+    <Key>
+      <PropertyRef Name="Profession_ID" />
+    </Key>
+    <Property Name="Name_Profession" Type="varchar" MaxLength="100" />
+    <Property Name="Profession_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecordHistories">
+    <Key>
+      <PropertyRef Name="Record_ID" />
+    </Key>
+    <Property Name="Note" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Record_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PS_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubSystems">
+    <Key>
+      <PropertyRef Name="Sub_System_ID" />
+    </Key>
+    <Property Name="Sub_System" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Sub_System_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "DB1146.dbo.sysdiagrams" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="Employee_ID" Type="int" Nullable="false" />
+    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Workplaces">
+    <Key>
+      <PropertyRef Name="Workplace_ID" />
+    </Key>
+    <Property Name="Office_ID" Type="int" />
+    <Property Name="Workplace_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employee_ID" Type="int" />
+    <Property Name="Floor" Type="varchar" MaxLength="20" />
+    <Property Name="Housing" Type="varchar" MaxLength="20" />
+    <Property Name="Telephone" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="dep_off">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Offices" Type="Self.Offices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Department_ID" />
+      </Principal>
+      <Dependent Role="Offices">
+        <PropertyRef Name="Department_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="doc_t_doc">
+    <End Role="DocumentTypes" Type="Self.DocumentTypes" Multiplicity="0..1" />
+    <End Role="Documents" Type="Self.Documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentTypes">
+        <PropertyRef Name="Document_type_ID" />
+      </Principal>
+      <Dependent Role="Documents">
+        <PropertyRef Name="Document_type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="emp_dev">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Developers" Type="Self.Developers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Developers">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="emp_usr">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="emp_wkr">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Workplaces" Type="Self.Workplaces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Workplaces">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="off_emp">
+    <End Role="Offices" Type="Self.Offices" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Offices">
+        <PropertyRef Name="Office_ID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Office_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="off_wrk">
+    <End Role="Offices" Type="Self.Offices" Multiplicity="0..1" />
+    <End Role="Workplaces" Type="Self.Workplaces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Offices">
+        <PropertyRef Name="Office_ID" />
+      </Principal>
+      <Dependent Role="Workplaces">
+        <PropertyRef Name="Office_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="prg_doc">
+    <End Role="PrgSystems" Type="Self.PrgSystems" Multiplicity="0..1" />
+    <End Role="Documents" Type="Self.Documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrgSystems">
+        <PropertyRef Name="PS_ID" />
+      </Principal>
+      <Dependent Role="Documents">
+        <PropertyRef Name="PS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="prg_l_prg">
+    <End Role="PrgLangs" Type="Self.PrgLangs" Multiplicity="0..1" />
+    <End Role="PrgSystems" Type="Self.PrgSystems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrgLangs">
+        <PropertyRef Name="Prg_Lang_ID" />
+      </Principal>
+      <Dependent Role="PrgSystems">
+        <PropertyRef Name="Prg_Lang_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="prg_rec">
+    <End Role="PrgSystems" Type="Self.PrgSystems" Multiplicity="1" />
+    <End Role="RecordHistories" Type="Self.RecordHistories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrgSystems">
+        <PropertyRef Name="PS_ID" />
+      </Principal>
+      <Dependent Role="RecordHistories">
+        <PropertyRef Name="PS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ps_acc">
+    <End Role="PrgSystems" Type="Self.PrgSystems" Multiplicity="1" />
+    <End Role="AccesRights" Type="Self.AccesRights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrgSystems">
+        <PropertyRef Name="PS_ID" />
+      </Principal>
+      <Dependent Role="AccesRights">
+        <PropertyRef Name="PS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="rec_dev">
+    <End Role="RecordHistories" Type="Self.RecordHistories" Multiplicity="1" />
+    <End Role="Developers" Type="Self.Developers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RecordHistories">
+        <PropertyRef Name="Record_ID" />
+      </Principal>
+      <Dependent Role="Developers">
+        <PropertyRef Name="Record_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="rpoff_emp">
+    <End Role="Professions" Type="Self.Professions" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Professions">
+        <PropertyRef Name="Profession_ID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Profession_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ssys_t_acc">
+    <End Role="SubSystems" Type="Self.SubSystems" Multiplicity="0..1" />
+    <End Role="AccesRights" Type="Self.AccesRights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubSystems">
+        <PropertyRef Name="Sub_System_ID" />
+      </Principal>
+      <Dependent Role="AccesRights">
+        <PropertyRef Name="Sub_System_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AccesRightToUsers_Proc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="DELETE_ARTU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="User_ID" Type="int" Mode="In" />
+    <Parameter Name="PS_ID" Type="int" Mode="In" />
+    <Parameter Name="AccesRightID" Type="int" Mode="In" />
+    <Parameter Name="Sub_System_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DELETE_WrkToComp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Workplace_ID" Type="int" Mode="In" />
+    <Parameter Name="Computer_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="IMPORT_DEPARTMENTS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name_Department" Type="nvarchar" Mode="In" />
+    <Parameter Name="Department_ID" Type="int" Mode="In" />
+    <Parameter Name="Remove" Type="int" Mode="In" />
+    <Parameter Name="Lock" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="IMPORT_EMPLOYEE_PLACEMENT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Department_ID" Type="int" Mode="In" />
+    <Parameter Name="Backward_ID" Type="int" Mode="In" />
+    <Parameter Name="Personnel_Number" Type="int" Mode="In" />
+    <Parameter Name="Remove" Type="int" Mode="In" />
+    <Parameter Name="Lock" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="IMPORT_EMPLOYEES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Full_Name_Employee" Type="nvarchar" Mode="In" />
+    <Parameter Name="Personnel_Number" Type="int" Mode="In" />
+    <Parameter Name="Profession_ID" Type="int" Mode="In" />
+    <Parameter Name="Remove" Type="int" Mode="In" />
+    <Parameter Name="Lock" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="IMPORT_OFFICES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Department_ID" Type="int" Mode="In" />
+    <Parameter Name="Backward_ID" Type="int" Mode="In" />
+    <Parameter Name="Name_Office" Type="nvarchar" Mode="In" />
+    <Parameter Name="Remove" Type="int" Mode="In" />
+    <Parameter Name="Lock" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="IMPORT_PROFESSIONS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name_Profession" Type="nvarchar" Mode="In" />
+    <Parameter Name="Profession_ID" Type="int" Mode="In" />
+    <Parameter Name="Remove" Type="int" Mode="In" />
+    <Parameter Name="Lock" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="INSERT_ARTU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="User_ID" Type="int" Mode="In" />
+    <Parameter Name="AccesRightID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="INSERT_WrkToComp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Workplace_ID" Type="int" Mode="In" />
+    <Parameter Name="Computer_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SELECT_ARTU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="User_ID" Type="int" Mode="In" />
+    <Parameter Name="PS_ID" Type="int" Mode="In" />
+    <Parameter Name="AccesRightID" Type="int" Mode="In" />
+    <Parameter Name="Sub_System_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SELECT_WrkToComp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Workplace_ID" Type="int" Mode="In" />
+    <Parameter Name="Computer_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WorkplaceToComputers_Proc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="Хранилище OASUModelContainer">
+    <EntitySet Name="AccesRights" EntityType="Self.AccesRights" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Computers" EntityType="Self.Computers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Developers" EntityType="Self.Developers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documents" EntityType="Self.Documents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentTypes" EntityType="Self.DocumentTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Offices" EntityType="Self.Offices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrgLangs" EntityType="Self.PrgLangs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrgSystems" EntityType="Self.PrgSystems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Professions" EntityType="Self.Professions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecordHistories" EntityType="Self.RecordHistories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubSystems" EntityType="Self.SubSystems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Workplaces" EntityType="Self.Workplaces" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sysdiagrams].[name] AS [name], 
+    [sysdiagrams].[principal_id] AS [principal_id], 
+    [sysdiagrams].[diagram_id] AS [diagram_id], 
+    [sysdiagrams].[version] AS [version], 
+    [sysdiagrams].[definition] AS [definition]
+    FROM [dbo].[sysdiagrams] AS [sysdiagrams]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="dep_off" Association="Self.dep_off">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Offices" EntitySet="Offices" />
+    </AssociationSet>
+    <AssociationSet Name="doc_t_doc" Association="Self.doc_t_doc">
+      <End Role="DocumentTypes" EntitySet="DocumentTypes" />
+      <End Role="Documents" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="emp_dev" Association="Self.emp_dev">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Developers" EntitySet="Developers" />
+    </AssociationSet>
+    <AssociationSet Name="emp_usr" Association="Self.emp_usr">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="emp_wkr" Association="Self.emp_wkr">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Workplaces" EntitySet="Workplaces" />
+    </AssociationSet>
+    <AssociationSet Name="off_emp" Association="Self.off_emp">
+      <End Role="Offices" EntitySet="Offices" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="off_wrk" Association="Self.off_wrk">
+      <End Role="Offices" EntitySet="Offices" />
+      <End Role="Workplaces" EntitySet="Workplaces" />
+    </AssociationSet>
+    <AssociationSet Name="prg_doc" Association="Self.prg_doc">
+      <End Role="PrgSystems" EntitySet="PrgSystems" />
+      <End Role="Documents" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="prg_l_prg" Association="Self.prg_l_prg">
+      <End Role="PrgLangs" EntitySet="PrgLangs" />
+      <End Role="PrgSystems" EntitySet="PrgSystems" />
+    </AssociationSet>
+    <AssociationSet Name="prg_rec" Association="Self.prg_rec">
+      <End Role="PrgSystems" EntitySet="PrgSystems" />
+      <End Role="RecordHistories" EntitySet="RecordHistories" />
+    </AssociationSet>
+    <AssociationSet Name="ps_acc" Association="Self.ps_acc">
+      <End Role="PrgSystems" EntitySet="PrgSystems" />
+      <End Role="AccesRights" EntitySet="AccesRights" />
+    </AssociationSet>
+    <AssociationSet Name="rec_dev" Association="Self.rec_dev">
+      <End Role="RecordHistories" EntitySet="RecordHistories" />
+      <End Role="Developers" EntitySet="Developers" />
+    </AssociationSet>
+    <AssociationSet Name="rpoff_emp" Association="Self.rpoff_emp">
+      <End Role="Professions" EntitySet="Professions" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="ssys_t_acc" Association="Self.ssys_t_acc">
+      <End Role="SubSystems" EntitySet="SubSystems" />
+      <End Role="AccesRights" EntitySet="AccesRights" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

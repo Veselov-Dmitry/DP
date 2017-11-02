@@ -1,0 +1,839 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C79397E7-6DA1-452B-BB09-E37F0E6B41E1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DP</RootNamespace>
+    <AssemblyName>DP</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.DocumentObjectModel-WPF, Version=1.32.3885.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MigraDoc.DocumentObjectModel-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering-WPF, Version=1.32.3885.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MigraDoc.Rendering-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering-WPF">
+      <HintPath>..\packages\MigraDoc.RtfRendering-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp-WPF, Version=1.32.2608.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PdfSharp-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting-WPF, Version=1.32.2608.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PdfSharp.Charting-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Expression.Blend.Sdk.1.0.2\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="DefaultDialogServiceXML.cs" />
+    <Compile Include="Model\AccesRights.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AccesRightToUsers_Proc_Result.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OASU.Context.Constructor.cs" />
+    <Compile Include="Model\CommonClass.cs" />
+    <Compile Include="Model\Computers.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Departments.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Developers.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Documents.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DocumentTypes.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Employees.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Interfaces\IGeterModel.cs" />
+    <Compile Include="Model\Interfaces\IRequestCloseViewModel.cs" />
+    <Compile Include="Model\OASU.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OASU.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OASU.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OASU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OASU.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Offices.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PrgLangs.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PrgSystems.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Professions.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RecordHistories.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SELECT_ARTU_Result.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SELECT_WrkToComp_Result.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Serializable.cs" />
+    <Compile Include="Model\SingleConnection.cs" />
+    <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagrams_Result.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SubSystems.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Users.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Workplaces.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WorkplaceToComputers_Proc_Result.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WrkToComp_Result.cs">
+      <DependentUpon>OASU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GeterModel.cs" />
+    <Compile Include="Navigation\Interfaces\IPageResolver.cs" />
+    <Compile Include="Navigation\NavigationClass.cs" />
+    <Compile Include="Navigation\PagesResolver.cs" />
+    <Compile Include="PDF\PDFClass.cs" />
+    <Compile Include="Print\HeaderedFlowDocumentPaginator.cs" />
+    <Compile Include="Resources\EmptySelection.xaml.cs">
+      <DependentUpon>EmptySelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Interface\IDependencyResolver.cs" />
+    <Compile Include="Services\NinjectCommon.cs" />
+    <Compile Include="Services\NinjectConfigurationModules.cs" />
+    <Compile Include="Services\NinjectDependencyResolver.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddAceesRights.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddComputers.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddDepartments.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddDevelopers.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddDocuments.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddDocumentsTypes.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddEmployees.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddOffices.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddPrgLangs.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddPrgSystems.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddProfessions.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddRecordHistories.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddSubSystems.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddUsers.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddWorkplaces.cs" />
+    <Compile Include="ViewModel\Autorisation\ViewModelAutorisation.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelAceesRights.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelComputers.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelDepartments.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelDevelopers.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelDocuments.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelDocumentsTypes.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelEmployees.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelOffices.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelPrgLangs.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelPrgSystems.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelProfessions.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelRecordHistories.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelSubSystems.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelUsers.cs" />
+    <Compile Include="ViewModel\Del\ViewModelDelWorkplaces.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditAceesRights.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditComputers.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditDepartments.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditDevelopers.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditDocuments.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditDocumentsTypes.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditEmployees.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditOffices.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditPrgLangs.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditPrgSystems.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditProfessions.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditRecordHistories.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditSubSystems.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditUsers.cs" />
+    <Compile Include="ViewModel\Edit\ViewModelEditWorkplaces.cs" />
+    <Compile Include="ViewModel\ImportDBF\ImportSQL.cs" />
+    <Compile Include="ViewModel\ImportDBF\ImportViewModel.cs" />
+    <Compile Include="ViewModel\ImportExportDB\ViewModelExportDB.cs" />
+    <Compile Include="ViewModel\ImportExportDB\ViewModelImportDB.cs" />
+    <Compile Include="ViewModel\Interfaces\IDialogService.cs" />
+    <Compile Include="ViewModel\Interfaces\IViewModelsResolver.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelAccesRightToUsers.cs" />
+    <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\ViewModelAccesRights.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\ViewModelComputers.cs" />
+    <Compile Include="ViewModel\ViewModelDepartments.cs" />
+    <Compile Include="ViewModel\ViewModelDevelopers.cs" />
+    <Compile Include="ViewModel\ViewModelDocuments.cs" />
+    <Compile Include="ViewModel\ViewModelDocumentsTypes.cs" />
+    <Compile Include="ViewModel\ViewModelEmployees.cs" />
+    <Compile Include="ViewModel\ViewModelMessage.cs" />
+    <Compile Include="ViewModel\ViewModelOffices.cs" />
+    <Compile Include="ViewModel\ViewModelPage404.cs" />
+    <Compile Include="ViewModel\ViewModelPrgLangs.cs" />
+    <Compile Include="ViewModel\ViewModelPrgSystems.cs" />
+    <Compile Include="ViewModel\ViewModelProfessions.cs" />
+    <Compile Include="ViewModel\ViewModelRecordHistories.cs" />
+    <Compile Include="ViewModel\ViewModelsResolver.cs" />
+    <Compile Include="ViewModel\ViewModelSubSystems.cs" />
+    <Compile Include="ViewModel\ViewModelUsers.cs" />
+    <Compile Include="ViewModel\ViewModelWorkplaces.cs" />
+    <Compile Include="ViewModel\ViewModelWorkplaceToComputers.cs" />
+    <Compile Include="View\AccesRightsView.xaml.cs">
+      <DependentUpon>AccesRightsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AccesRightToUsersView.xaml.cs">
+      <DependentUpon>AccesRightToUsersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddAceesRightsView.xaml.cs">
+      <DependentUpon>AddAceesRightsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddComputersView.xaml.cs">
+      <DependentUpon>AddComputersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddDepartmentsView.xaml.cs">
+      <DependentUpon>AddDepartmentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddDevelopersView.xaml.cs">
+      <DependentUpon>AddDevelopersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddDocumentsTypesView.xaml.cs">
+      <DependentUpon>AddDocumentsTypesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddDocumentsView.xaml.cs">
+      <DependentUpon>AddDocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddEmployeesView.xaml.cs">
+      <DependentUpon>AddEmployeesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddOfficesView.xaml.cs">
+      <DependentUpon>AddOfficesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddPrgLangsView.xaml.cs">
+      <DependentUpon>AddPrgLangsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddPrgSystemsView.xaml.cs">
+      <DependentUpon>AddPrgSystemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddProfessionsView.xaml.cs">
+      <DependentUpon>AddProfessionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddRecordHistoriesView.xaml.cs">
+      <DependentUpon>AddRecordHistoriesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddSubSystemsView.xaml.cs">
+      <DependentUpon>AddSubSystemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddUsersView.xaml.cs">
+      <DependentUpon>AddUsersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add\AddWorkplacesView.xaml.cs">
+      <DependentUpon>AddWorkplacesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Autorisation\AutorisationView.xaml.cs">
+      <DependentUpon>AutorisationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ComputersView.xaml.cs">
+      <DependentUpon>ComputersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelAceesRightsView.xaml.cs">
+      <DependentUpon>DelAceesRightsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelComputersView.xaml.cs">
+      <DependentUpon>DelComputersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelDepartmentsView.xaml.cs">
+      <DependentUpon>DelDepartmentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelDevelopersView.xaml.cs">
+      <DependentUpon>DelDevelopersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelDocumentsTypesView.xaml.cs">
+      <DependentUpon>DelDocumentsTypesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelDocumentsView.xaml.cs">
+      <DependentUpon>DelDocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelEmployeesView.xaml.cs">
+      <DependentUpon>DelEmployeesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelOfficesView.xaml.cs">
+      <DependentUpon>DelOfficesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelPrgLangsView.xaml.cs">
+      <DependentUpon>DelPrgLangsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelPrgSystemsView.xaml.cs">
+      <DependentUpon>DelPrgSystemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelProfessionsView.xaml.cs">
+      <DependentUpon>DelProfessionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelRecordHistoriesView.xaml.cs">
+      <DependentUpon>DelRecordHistoriesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelSubSystemsView.xaml.cs">
+      <DependentUpon>DelSubSystemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelUsersView.xaml.cs">
+      <DependentUpon>DelUsersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Del\DelWorkplacesView.xaml.cs">
+      <DependentUpon>DelWorkplacesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentsView.xaml.cs">
+      <DependentUpon>DepartmentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DevelopersView.xaml.cs">
+      <DependentUpon>DevelopersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DocumentsTypesView.xaml.cs">
+      <DependentUpon>DocumentsTypesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DocumentsView.xaml.cs">
+      <DependentUpon>DocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditAceesRightsView.xaml.cs">
+      <DependentUpon>EditAceesRightsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditComputersView.xaml.cs">
+      <DependentUpon>EditComputersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditDepartmentsView.xaml.cs">
+      <DependentUpon>EditDepartmentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditDevelopersView.xaml.cs">
+      <DependentUpon>EditDevelopersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditDocumentsTypesView.xaml.cs">
+      <DependentUpon>EditDocumentsTypesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditDocumentsView.xaml.cs">
+      <DependentUpon>EditDocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditEmployeesView.xaml.cs">
+      <DependentUpon>EditEmployeesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditOfficesView.xaml.cs">
+      <DependentUpon>EditOfficesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditPrgLangsView.xaml.cs">
+      <DependentUpon>EditPrgLangsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditPrgSystemsView.xaml.cs">
+      <DependentUpon>EditPrgSystemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditProfessionsView.xaml.cs">
+      <DependentUpon>EditProfessionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditRecordHistoriesView.xaml.cs">
+      <DependentUpon>EditRecordHistoriesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditSubSystemsView.xaml.cs">
+      <DependentUpon>EditSubSystemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditUsersView.xaml.cs">
+      <DependentUpon>EditUsersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edit\EditWorkplacesView.xaml.cs">
+      <DependentUpon>EditWorkplacesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EmployeesView.xaml.cs">
+      <DependentUpon>EmployeesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImportDBF\ImportView.xaml.cs">
+      <DependentUpon>ImportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImportExportDB\ExportDBView.xaml.cs">
+      <DependentUpon>ExportDBView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImportExportDB\ImportDBView.xaml.cs">
+      <DependentUpon>ImportDBView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MessageView.xaml.cs">
+      <DependentUpon>MessageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OfficesView.xaml.cs">
+      <DependentUpon>OfficesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PrgLangsView.xaml.cs">
+      <DependentUpon>PrgLangsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PrgSystemsView.xaml.cs">
+      <DependentUpon>PrgSystemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfessionsView.xaml.cs">
+      <DependentUpon>ProfessionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordHistoriesView.xaml.cs">
+      <DependentUpon>RecordHistoriesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SubSystemsView.xaml.cs">
+      <DependentUpon>SubSystemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UsersView.xaml.cs">
+      <DependentUpon>UsersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewRequest.cs" />
+    <Compile Include="View\WorkplacesView.xaml.cs">
+      <DependentUpon>WorkplacesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WorkplaceToComputersView.xaml.cs">
+      <DependentUpon>WorkplaceToComputersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Interfaces\IFileService.cs" />
+    <Compile Include="XML\XMLFileService.cs" />
+    <Page Include="Resources\EmptySelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Comands.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AccesRightsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AccesRightToUsersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddAceesRightsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddComputersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddDepartmentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddDevelopersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddDocumentsTypesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddDocumentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddEmployeesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddOfficesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddPrgLangsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddPrgSystemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddProfessionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddRecordHistoriesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddSubSystemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddUsersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Add\AddWorkplacesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Autorisation\AutorisationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ComputersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelAceesRightsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelComputersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelDepartmentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelDevelopersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelDocumentsTypesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelDocumentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelEmployeesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelOfficesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelPrgLangsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelPrgSystemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelProfessionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelRecordHistoriesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelSubSystemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelUsersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Del\DelWorkplacesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DepartmentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DevelopersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DocumentsTypesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DocumentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditAceesRightsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditComputersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditDepartmentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditDevelopersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditDocumentsTypesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditDocumentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditEmployeesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditOfficesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditPrgLangsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditPrgSystemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditProfessionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditRecordHistoriesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditSubSystemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditUsersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Edit\EditWorkplacesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EmployeesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\ImportDBF\ImportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImportExportDB\ExportDBView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImportExportDB\ImportDBView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MessageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OfficesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PrgLangsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PrgSystemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProfessionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordHistoriesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SubSystemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UsersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WorkplacesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WorkplaceToComputersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\OASU.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OASU.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\OASU.edmx.diagram">
+      <DependentUpon>OASU.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\OASU.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OASU.edmx</DependentUpon>
+      <LastGenOutput>OASU.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\OASU.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OASU.edmx</DependentUpon>
+      <LastGenOutput>OASU.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Resources\exit.png" />
+    <Resource Include="Resources\wpf-banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

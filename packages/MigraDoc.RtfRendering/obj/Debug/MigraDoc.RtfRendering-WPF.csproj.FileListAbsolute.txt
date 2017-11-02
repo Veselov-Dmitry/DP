@@ -1,0 +1,5 @@
+R:\Project\DP\packages\MigraDoc.RtfRendering\obj\Debug\MigraDoc.RtfRendering-WPF.csprojResolveAssemblyReference.cache
+R:\Project\DP\packages\MigraDoc.RtfRendering\obj\Debug\MigraDoc.RtfRendering.Resources.Messages.resources
+R:\Project\DP\packages\MigraDoc.RtfRendering\obj\Debug\MigraDoc.RtfRendering.Resources.Messages.de.resources
+R:\Project\DP\packages\MigraDoc.RtfRendering\obj\Debug\MigraDoc.RtfRendering-WPF.csproj.GenerateResource.Cache
+R:\Project\DP\packages\MigraDoc.RtfRendering\obj\Debug\MigraDoc.RtfRendering-WPF.csproj.CoreCompileInputs.cache

@@ -1,0 +1,55 @@
+﻿<Window x:Class="DP.View.Del.DelWorkplacesView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DP.View.Del"
+        mc:Ignorable="d"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        Title="Удалить рабочее место" Height="auto"
+        Style="{StaticResource WindowC}"
+        WindowStartupLocation="{StaticResource WSL}">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Style="{StaticResource StackPanelC}" >
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Название бюро"></TextBlock>
+                <TextBox Text="{Binding Path=Name_Office}" Width="150" Height="22" IsReadOnly="True"/>
+                <WrapPanel>
+                    <TextBlock Text="Отдел "/>
+                    <TextBlock Text="{Binding Path=Name_Department}"/>
+                </WrapPanel>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Работник"></TextBlock>
+                <TextBox Text="{Binding Path=Personnel_Number}" Width="150" Height="22" IsReadOnly="True"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Style="{StaticResource StackPanelC}" >
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Телефон" />
+                <TextBox Text="{Binding Path=Telephone}" Width="150" Height="22" IsReadOnly="True"/>
+                <WrapPanel>
+                    <TextBlock Text="ID "/>
+                    <TextBlock Text="{Binding Path=Workplace_ID}"/>
+                </WrapPanel>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Этаж" />
+                <TextBox Text="{Binding Path=Floor}" Width="55" Height="22" IsReadOnly="True"/>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Корпус" />
+                <TextBox Text="{Binding Path=Housing}" Width="55" Height="22" IsReadOnly="True"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" >
+            <Button Content="Удалить" Command="{Binding DelCommand}" Style="{StaticResource ButtonC}"/>
+            <Button Content="Выйти" Command="{Binding ExitCommand}"  Style="{StaticResource ButtonC}"/>
+        </StackPanel>
+    </Grid>
+</Window>

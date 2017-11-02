@@ -1,0 +1,45 @@
+﻿<Window x:Class="DP.View.Autorisation.AutorisationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DP.View.Autorisation"
+        mc:Ignorable="d"
+        x:Name="Wnd"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="ПС№1146 Вход" MinHeight="280" MaxHeight="280" Height="306" MinWidth="248" Width="248" MaxWidth="248">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="155"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" >
+            <StackPanel>
+                <Label Content="Имя входа:" Margin="5,0,0,0"/>
+                <ComboBox Width="180" SelectedIndex="{Binding Index,Mode=TwoWay, IsAsync=True}">
+                    <ComboBoxItem Content="Пользователь"/>
+                    <ComboBoxItem Content="Администратор"/>
+                    <!--<ComboBoxItem Content="Разработчик"/>-->
+                </ComboBox>
+                <Label Content="Пароль:" Margin="5,0,0,0"/>
+                <PasswordBox Width="180" Height="22" PasswordChar="*" Margin="0,0,0,0">
+                    <PasswordBox.InputBindings>
+                        <KeyBinding Key="Return" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=Wnd}" />
+                    </PasswordBox.InputBindings>
+                </PasswordBox>
+                <WrapPanel Margin="10">
+                    <CheckBox Content="Изменить cервер" VerticalAlignment="Center" Command="{Binding CheckCommand}" IsChecked="{Binding EditServer, Mode=TwoWay,IsAsync=True}"/>
+                </WrapPanel>
+                <TextBox Width="180" Height="22" IsEnabled="{Binding EditServer, Mode=TwoWay,IsAsync=True}" Text="{Binding ServerPath,Mode=TwoWay, IsAsync=True}">
+                    
+                </TextBox>
+            </StackPanel>
+        </StackPanel>
+        <Grid Grid.Row="2" VerticalAlignment="Bottom">
+            <Button Content="Вход"  Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=Wnd}" Style="{StaticResource ButtonC}" HorizontalAlignment="Left"/>
+            <Button Content="Отмена"  Command="{Binding ExitCommand}" CommandParameter="{Binding ElementName=Wnd}" Style="{StaticResource ButtonC}" HorizontalAlignment="Right"/>
+        </Grid >
+    </Grid>
+</Window>

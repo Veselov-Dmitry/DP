@@ -1,0 +1,16 @@
+R:\Project\DP\packages\PdfSharp.Charting\bin\Debug\PdfSharp.Charting-WPF.XML
+R:\Project\DP\packages\PdfSharp.Charting\bin\Debug\PdfSharp.Charting-WPF.dll
+R:\Project\DP\packages\PdfSharp.Charting\bin\Debug\PdfSharp.Charting-WPF.pdb
+R:\Project\DP\packages\PdfSharp.Charting\bin\Debug\de\PdfSharp.Charting-WPF.resources.dll
+R:\Project\DP\packages\PdfSharp.Charting\bin\Debug\PdfSharp-WPF.dll
+R:\Project\DP\packages\PdfSharp.Charting\bin\Debug\PdfSharp-WPF.pdb
+R:\Project\DP\packages\PdfSharp.Charting\bin\Debug\PdfSharp-WPF.xml
+R:\Project\DP\packages\PdfSharp.Charting\bin\Debug\de\PdfSharp-WPF.resources.dll
+R:\Project\DP\packages\PdfSharp.Charting\obj\Debug\PdfSharp.Charting-WPF.csprojResolveAssemblyReference.cache
+R:\Project\DP\packages\PdfSharp.Charting\obj\Debug\PdfSharp.Charting.Resources.Messages.resources
+R:\Project\DP\packages\PdfSharp.Charting\obj\Debug\PdfSharp.Charting.Resources.Messages.de.resources
+R:\Project\DP\packages\PdfSharp.Charting\obj\Debug\PdfSharp.Charting-WPF.csproj.GenerateResource.Cache
+R:\Project\DP\packages\PdfSharp.Charting\obj\Debug\PdfSharp.Charting-WPF.csproj.CoreCompileInputs.cache
+R:\Project\DP\packages\PdfSharp.Charting\obj\Debug\de\PdfSharp.Charting-WPF.resources.dll
+R:\Project\DP\packages\PdfSharp.Charting\obj\Debug\PdfSharp.Charting-WPF.dll
+R:\Project\DP\packages\PdfSharp.Charting\obj\Debug\PdfSharp.Charting-WPF.pdb

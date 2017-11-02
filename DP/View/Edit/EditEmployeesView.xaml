@@ -1,0 +1,63 @@
+﻿<Window x:Class="DP.View.Edit.EditEmployeesView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DP.View.Edit"
+        mc:Ignorable="d"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        Title="Редактировать работника" Height="auto"
+        Style="{StaticResource WindowC}"
+        WindowStartupLocation="{StaticResource WSL}">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Style="{StaticResource StackPanelC}" >
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Название бюро"></TextBlock>
+                <ComboBox ItemsSource="{Binding Path=Offices}"
+                          DisplayMemberPath="Name_Office"
+                          SelectedIndex="{Binding Path=SelectedOffice, Mode=TwoWay, IsAsync=True}"
+                          Width="150">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding SelectOffCommand}"  CommandParameter=""/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+                <WrapPanel Width="150">
+                    <TextBlock Text="Отдел: "/>
+                    <TextBlock Text="{Binding Path=Name_Department}"/>
+                </WrapPanel>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Профессия"></TextBlock>
+                <ComboBox ItemsSource="{Binding Path=Professions}"
+                          DisplayMemberPath="Name_Profession"
+                          SelectedIndex="{Binding Path=SelectedProfession, Mode=TwoWay, IsAsync=True}"                          
+                          Width="150"></ComboBox>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Style="{StaticResource StackPanelC}" >
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Ф.И.О." />
+                <TextBox Text="{Binding Path=Full_Name_Employee}" Width="150"/>
+                <WrapPanel>
+                    <TextBlock Text="ID "/>
+                    <TextBlock Text="{Binding Path=Employee_ID}"/>
+                </WrapPanel>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Табельный номер" />
+                <TextBox Text="{Binding Path=Personnel_Number}" Width="150"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" >
+            <Button Content="Сохранить" Command="{Binding SaveCommand}" Style="{StaticResource ButtonC}"/>
+            <Button Content="Выйти" Command="{Binding ExitCommand}"  Style="{StaticResource ButtonC}"/>
+        </StackPanel>
+    </Grid>
+</Window>

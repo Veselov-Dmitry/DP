@@ -1,0 +1,13 @@
+R:\Project\DP\packages\MigraDoc.DocumentObjectModel\bin\Debug\MigraDoc.DocumentObjectModel-WPF.xml
+R:\Project\DP\packages\MigraDoc.DocumentObjectModel\bin\Debug\MigraDoc.DocumentObjectModel-WPF.dll
+R:\Project\DP\packages\MigraDoc.DocumentObjectModel\bin\Debug\MigraDoc.DocumentObjectModel-WPF.pdb
+R:\Project\DP\packages\MigraDoc.DocumentObjectModel\bin\Debug\de\MigraDoc.DocumentObjectModel-WPF.resources.dll
+R:\Project\DP\packages\MigraDoc.DocumentObjectModel\obj\Debug\MigraDoc.DocumentObjectModel-WPF.csprojResolveAssemblyReference.cache
+R:\Project\DP\packages\MigraDoc.DocumentObjectModel\obj\Debug\Properties.Resources.resources
+R:\Project\DP\packages\MigraDoc.DocumentObjectModel\obj\Debug\MigraDoc.DocumentObjectModel.Resources.Messages.resources
+R:\Project\DP\packages\MigraDoc.DocumentObjectModel\obj\Debug\MigraDoc.DocumentObjectModel.Resources.Messages.de.resources
+R:\Project\DP\packages\MigraDoc.DocumentObjectModel\obj\Debug\MigraDoc.DocumentObjectModel-WPF.csproj.GenerateResource.Cache
+R:\Project\DP\packages\MigraDoc.DocumentObjectModel\obj\Debug\MigraDoc.DocumentObjectModel-WPF.csproj.CoreCompileInputs.cache
+R:\Project\DP\packages\MigraDoc.DocumentObjectModel\obj\Debug\de\MigraDoc.DocumentObjectModel-WPF.resources.dll
+R:\Project\DP\packages\MigraDoc.DocumentObjectModel\obj\Debug\MigraDoc.DocumentObjectModel-WPF.dll
+R:\Project\DP\packages\MigraDoc.DocumentObjectModel\obj\Debug\MigraDoc.DocumentObjectModel-WPF.pdb

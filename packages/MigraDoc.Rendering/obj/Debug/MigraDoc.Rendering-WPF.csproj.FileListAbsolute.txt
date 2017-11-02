@@ -1,0 +1,10 @@
+R:\Project\DP\packages\MigraDoc.Rendering\obj\Debug\MigraDoc.Rendering-WPF.csprojResolveAssemblyReference.cache
+R:\Project\DP\packages\MigraDoc.Rendering\obj\Debug\MigraDoc.Rendering.Windows\DocumentPreview.baml
+R:\Project\DP\packages\MigraDoc.Rendering\obj\Debug\MigraDoc.Rendering.Windows\DocumentPreview.g.cs
+R:\Project\DP\packages\MigraDoc.Rendering\obj\Debug\MigraDoc.Rendering-WPF_MarkupCompile.cache
+R:\Project\DP\packages\MigraDoc.Rendering\obj\Debug\MigraDoc.Rendering-WPF.g.resources
+R:\Project\DP\packages\MigraDoc.Rendering\obj\Debug\MigraDoc.Rendering.Forms.DocumentPreview.resources
+R:\Project\DP\packages\MigraDoc.Rendering\obj\Debug\MigraDoc.Rendering.Resources.Messages.resources
+R:\Project\DP\packages\MigraDoc.Rendering\obj\Debug\MigraDoc.Rendering.Resources.Messages.de.resources
+R:\Project\DP\packages\MigraDoc.Rendering\obj\Debug\MigraDoc.Rendering-WPF.csproj.GenerateResource.Cache
+R:\Project\DP\packages\MigraDoc.Rendering\obj\Debug\MigraDoc.Rendering-WPF.csproj.CoreCompileInputs.cache

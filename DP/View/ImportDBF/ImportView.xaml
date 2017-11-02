@@ -1,0 +1,113 @@
+﻿<Window x:Class="DP.View.ImportDBF.ImportView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        mc:Ignorable="d"
+        x:Name="wnd"
+        WindowStartupLocation="CenterScreen"
+        Title="Импорт " MinHeight="620" MaxHeight="620" MinWidth="500" MaxWidth="1000" IsEnabled="{Binding EnableWindow, Mode=TwoWay, IsAsync=True}" Height="489" Width="4">
+
+    <Window.Resources>
+        <Style x:Key="helpTextBlock" TargetType="TextBlock">
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="MaxHeight" Value="45"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="pathTextBox" TargetType="TextBox">
+            <Setter Property="MinWidth" Value="350"/>
+            <Setter Property="IsReadOnly" Value="False"/>
+            <Setter Property="Margin" Value="10,0,0,0"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+
+        <StackPanel>
+            <GroupBox Header="Импорт сотрудников (KADR.DBF)" Margin="10" BorderThickness="2">
+                <StackPanel>
+                    <WrapPanel>
+                        <Button Content="Обзор..." Command="{Binding BrowseCommand}" CommandParameter="kadr" Style="{StaticResource ButtonC}"/>
+                        <Button Content="Импорт" Command="{Binding ImportCommand}" CommandParameter="kadr"  Style="{StaticResource ButtonC}" IsEnabled="{Binding KADR.Enable}"/>
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBox Text="{Binding KadrPath, Mode=TwoWay, IsAsync=True, UpdateSourceTrigger=PropertyChanged}" 
+                                 Style="{StaticResource pathTextBox}" 
+                                 HorizontalAlignment="Left" >
+                            <TextBox.InputBindings>
+                                <KeyBinding Key="Return" Command="{Binding EnterCommand}" CommandParameter="kadr"/>
+                            </TextBox.InputBindings>
+                        </TextBox>
+                        <TextBlock Text="{Binding Path=KADR.Text, Mode=TwoWay, IsAsync=True}" Foreground="{Binding Path=KADR.Color, Mode=TwoWay, IsAsync=True}" Style="{StaticResource helpTextBlock}"/>
+                    </WrapPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Импорт отделов и бюро(AA042.DBF)"  Margin="10" BorderThickness="2">
+                <StackPanel>
+                    <WrapPanel>
+                        <Button Content="Обзор..." Command="{Binding BrowseCommand}" CommandParameter="aa042" Style="{StaticResource ButtonC}"/>
+                        <Button Content="Импорт" IsEnabled="{Binding AA042.Enable}"  Style="{StaticResource ButtonC}" Command="{Binding ImportCommand}" CommandParameter="aa042" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBox Text="{Binding Aa042Path, Mode=TwoWay, IsAsync=True, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource pathTextBox}">
+                            <TextBox.InputBindings>
+                                <KeyBinding Key="Return" Command="{Binding EnterCommand}" CommandParameter="shtat"/>
+                            </TextBox.InputBindings>
+                        </TextBox>
+                        <TextBlock Text="{Binding Path=AA042.Text, Mode=TwoWay, IsAsync=True}" Foreground="{Binding Path=AA042.Color, Mode=TwoWay, IsAsync=True}"  Style="{StaticResource helpTextBlock}"/>
+                    </WrapPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Импорт профессий (SRP_PROF.DBF)" Margin="10" BorderThickness="2">
+                <StackPanel>
+                    <WrapPanel>
+                        <Button Content="Обзор..." Command="{Binding BrowseCommand}" CommandParameter="spr_prof" Style="{StaticResource ButtonC}"/>
+                        <Button Content="Импорт" IsEnabled="{Binding SRP_PROF.Enable}"  Style="{StaticResource ButtonC}" Command="{Binding ImportCommand}" CommandParameter="spr_prof" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBox Text="{Binding Srp_prfPath, Mode=TwoWay, IsAsync=True, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource pathTextBox}">
+                            <TextBox.InputBindings>
+                                <KeyBinding Key="Return" Command="{Binding EnterCommand}" CommandParameter="spr_prof"/>
+                            </TextBox.InputBindings>
+                        </TextBox>
+                        <TextBlock Text="{Binding Path=SRP_PROF.Text, Mode=TwoWay, IsAsync=True}" Foreground="{Binding Path=SRP_PROF.Color, Mode=TwoWay, IsAsync=True}"  Style="{StaticResource helpTextBlock}"/>
+                    </WrapPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Импорт расположения сотрудников(SHTAT.DBF)"  Margin="10" BorderThickness="2">
+                <StackPanel>
+                    <WrapPanel>
+                        <Button Content="Обзор..." Command="{Binding BrowseCommand}" CommandParameter="shtat" Style="{StaticResource ButtonC}"/>
+                        <Button Content="Импорт" IsEnabled="{Binding SHTAT.Enable}"  Style="{StaticResource ButtonC}" Command="{Binding ImportCommand}" CommandParameter="shtat" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <TextBox Text="{Binding ShtatPath, Mode=TwoWay, IsAsync=True, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource pathTextBox}">
+                            <TextBox.InputBindings>
+                                <KeyBinding Key="Return" Command="{Binding EnterCommand}" CommandParameter="shtat"/>
+                            </TextBox.InputBindings>
+                        </TextBox>
+                        <TextBlock Text="{Binding Path=SHTAT.Text, Mode=TwoWay, IsAsync=True}" Foreground="{Binding Path=SHTAT.Color, Mode=TwoWay, IsAsync=True}"  Style="{StaticResource helpTextBlock}"/>
+                    </WrapPanel>
+                </StackPanel>
+            </GroupBox>
+            <WrapPanel HorizontalAlignment="Right" Margin="20">
+                <Button Content="Выход" Style="{StaticResource ButtonC}" Command="{Binding ExitCommand}"/>
+            </WrapPanel>
+        </StackPanel>
+
+        <Border Background="#90000000" Visibility="{Binding Visible}"  >
+            <Border  BorderBrush="Black" BorderThickness="1" Background="AliceBlue" 
+					CornerRadius="5" Width="200" Height="80" d:LayoutOverrides="Width, Height">
+                <Border.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Black" Opacity="0.5" Direction="270" ShadowDepth="0.7" />
+                </Border.BitmapEffect>
+                <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center" >
+                    <Label Content="Загружаю..." />
+                </WrapPanel>
+            </Border>
+        </Border>
+    </Grid>
+</Window>

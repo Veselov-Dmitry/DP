@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище OASUModelContainer" CdmEntityContainer="OASUEntity">
+    <EntitySetMapping Name="AccesRights">
+      <EntityTypeMapping TypeName="OASUModel.AccesRights">
+        <MappingFragment StoreEntitySet="AccesRights">
+          <ScalarProperty Name="AccesRightID" ColumnName="AccesRightID" />
+          <ScalarProperty Name="Sub_System_ID" ColumnName="Sub_System_ID" />
+          <ScalarProperty Name="PS_ID" ColumnName="PS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Computers">
+      <EntityTypeMapping TypeName="OASUModel.Computers">
+        <MappingFragment StoreEntitySet="Computers">
+          <ScalarProperty Name="Inventory_number" ColumnName="Inventory_number" />
+          <ScalarProperty Name="Computer_ID" ColumnName="Computer_ID" />
+          <ScalarProperty Name="Net_Name" ColumnName="Net_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="OASUModel.Departments">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="Name_Department" ColumnName="Name_Department" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Developers">
+      <EntityTypeMapping TypeName="OASUModel.Developers">
+        <MappingFragment StoreEntitySet="Developers">
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Developer_part_ID" ColumnName="Developer_part_ID" />
+          <ScalarProperty Name="Date_start" ColumnName="Date_start" />
+          <ScalarProperty Name="Record_ID" ColumnName="Record_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="OASUModel.Documents">
+        <MappingFragment StoreEntitySet="Documents">
+          <ScalarProperty Name="File_Name" ColumnName="File_Name" />
+          <ScalarProperty Name="Document_Number" ColumnName="Document_Number" />
+          <ScalarProperty Name="Document_ID" ColumnName="Document_ID" />
+          <ScalarProperty Name="Document_Date" ColumnName="Document_Date" />
+          <ScalarProperty Name="Document_type_ID" ColumnName="Document_type_ID" />
+          <ScalarProperty Name="PS_ID" ColumnName="PS_ID" />
+          <ScalarProperty Name="DocumentFile" ColumnName="DocumentFile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentTypes">
+      <EntityTypeMapping TypeName="OASUModel.DocumentTypes">
+        <MappingFragment StoreEntitySet="DocumentTypes">
+          <ScalarProperty Name="Name_document_type" ColumnName="Name_document_type" />
+          <ScalarProperty Name="Document_type_ID" ColumnName="Document_type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="OASUModel.Employees">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="Office_ID" ColumnName="Office_ID" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Full_Name_Employee" ColumnName="Full_Name_Employee" />
+          <ScalarProperty Name="Personnel_Number" ColumnName="Personnel_Number" />
+          <ScalarProperty Name="Profession_ID" ColumnName="Profession_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Offices">
+      <EntityTypeMapping TypeName="OASUModel.Offices">
+        <MappingFragment StoreEntitySet="Offices">
+          <ScalarProperty Name="Backward_ID" ColumnName="Backward_ID" />
+          <ScalarProperty Name="Name_Office" ColumnName="Name_Office" />
+          <ScalarProperty Name="Office_ID" ColumnName="Office_ID" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrgLangs">
+      <EntityTypeMapping TypeName="OASUModel.PrgLangs">
+        <MappingFragment StoreEntitySet="PrgLangs">
+          <ScalarProperty Name="Prg_Lang" ColumnName="Prg_Lang" />
+          <ScalarProperty Name="Prg_Lang_ID" ColumnName="Prg_Lang_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrgSystems">
+      <EntityTypeMapping TypeName="OASUModel.PrgSystems">
+        <MappingFragment StoreEntitySet="PrgSystems">
+          <ScalarProperty Name="PS_Name" ColumnName="PS_Name" />
+          <ScalarProperty Name="PS_ID" ColumnName="PS_ID" />
+          <ScalarProperty Name="Prg_Lang_ID" ColumnName="Prg_Lang_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Professions">
+      <EntityTypeMapping TypeName="OASUModel.Professions">
+        <MappingFragment StoreEntitySet="Professions">
+          <ScalarProperty Name="Name_Profession" ColumnName="Name_Profession" />
+          <ScalarProperty Name="Profession_ID" ColumnName="Profession_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecordHistories">
+      <EntityTypeMapping TypeName="OASUModel.RecordHistories">
+        <MappingFragment StoreEntitySet="RecordHistories">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Record_ID" ColumnName="Record_ID" />
+          <ScalarProperty Name="PS_ID" ColumnName="PS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubSystems">
+      <EntityTypeMapping TypeName="OASUModel.SubSystems">
+        <MappingFragment StoreEntitySet="SubSystems">
+          <ScalarProperty Name="Sub_System" ColumnName="Sub_System" />
+          <ScalarProperty Name="Sub_System_ID" ColumnName="Sub_System_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="OASUModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="OASUModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workplaces">
+      <EntityTypeMapping TypeName="OASUModel.Workplaces">
+        <MappingFragment StoreEntitySet="Workplaces">
+          <ScalarProperty Name="Office_ID" ColumnName="Office_ID" />
+          <ScalarProperty Name="Workplace_ID" ColumnName="Workplace_ID" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="Housing" ColumnName="Housing" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище OASUModel.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище OASUModel.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище OASUModel.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище OASUModel.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OASUModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище OASUModel.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OASUModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище OASUModel.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище OASUModel.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="DELETE_WrkToComp" FunctionName="Хранилище OASUModel.DELETE_WrkToComp" />
+    <FunctionImportMapping FunctionImportName="INSERT_WrkToComp" FunctionName="Хранилище OASUModel.INSERT_WrkToComp" />
+    <FunctionImportMapping FunctionImportName="SELECT_WrkToComp" FunctionName="Хранилище OASUModel.SELECT_WrkToComp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OASUModel.SELECT_WrkToComp_Result">
+          <ScalarProperty Name="Net_Name" ColumnName="Net_Name" />
+          <ScalarProperty Name="Workplace_ID" ColumnName="Workplace_ID" />
+          <ScalarProperty Name="Computer_ID" ColumnName="Computer_ID" />
+          <ScalarProperty Name="Inventory_number" ColumnName="Inventory_number" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Housing" ColumnName="Housing" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Office_ID" ColumnName="Office_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DELETE_ARTU" FunctionName="Хранилище OASUModel.DELETE_ARTU" />
+    <FunctionImportMapping FunctionImportName="INSERT_ARTU" FunctionName="Хранилище OASUModel.INSERT_ARTU" />
+    <FunctionImportMapping FunctionImportName="SELECT_ARTU" FunctionName="Хранилище OASUModel.SELECT_ARTU">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OASUModel.SELECT_ARTU_Result">
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Personnel_Number" ColumnName="Personnel_Number" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="PS_Name" ColumnName="PS_Name" />
+          <ScalarProperty Name="Sub_System" ColumnName="Sub_System" />
+          <ScalarProperty Name="AccesRightID" ColumnName="AccesRightID" />
+          <ScalarProperty Name="Sub_System_ID" ColumnName="Sub_System_ID" />
+          <ScalarProperty Name="PS_ID" ColumnName="PS_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="IMPORT_DEPARTMENTS" FunctionName="Хранилище OASUModel.IMPORT_DEPARTMENTS" />
+    <FunctionImportMapping FunctionImportName="IMPORT_EMPLOYEES" FunctionName="Хранилище OASUModel.IMPORT_EMPLOYEES" />
+    <FunctionImportMapping FunctionImportName="IMPORT_OFFICES" FunctionName="Хранилище OASUModel.IMPORT_OFFICES" />
+    <FunctionImportMapping FunctionImportName="IMPORT_PROFESSIONS" FunctionName="Хранилище OASUModel.IMPORT_PROFESSIONS" />
+    <FunctionImportMapping FunctionImportName="IMPORT_EMPLOYEE_PLACEMENT" FunctionName="Хранилище OASUModel.IMPORT_EMPLOYEE_PLACEMENT" />
+    <FunctionImportMapping FunctionImportName="AccesRightToUsers_Proc" FunctionName="Хранилище OASUModel.AccesRightToUsers_Proc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OASUModel.AccesRightToUsers_Proc_Result">
+          <ScalarProperty Name="AccesRightID" ColumnName="AccesRightID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WorkplaceToComputers_Proc" FunctionName="Хранилище OASUModel.WorkplaceToComputers_Proc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OASUModel.WorkplaceToComputers_Proc_Result">
+          <ScalarProperty Name="Workplace_ID" ColumnName="Workplace_ID" />
+          <ScalarProperty Name="Computer_ID" ColumnName="Computer_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

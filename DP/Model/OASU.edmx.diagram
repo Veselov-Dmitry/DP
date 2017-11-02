@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="91a15a2b8e474b79a4bd3bbcf7c82546" Name="Diagram1" DisplayType="true">
+        <EntityTypeShape EntityType="OASUModel.AccesRights" Width="1.5" PointX="0.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OASUModel.Computers" Width="1.5" PointX="8.125" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OASUModel.Departments" Width="1.5" PointX="10.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OASUModel.Developers" Width="1.5" PointX="6.375" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OASUModel.Documents" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OASUModel.DocumentTypes" Width="1.5" PointX="5.375" PointY="0.5" IsExpanded="true" FillColor="Yellow" />
+        <EntityTypeShape EntityType="OASUModel.Employees" Width="1.5" PointX="8.625" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OASUModel.Offices" Width="1.5" PointX="10.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OASUModel.PrgLangs" Width="1.5" PointX="0.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OASUModel.PrgSystems" Width="1.5" PointX="3.625" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OASUModel.Professions" Width="1.5" PointX="7.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OASUModel.RecordHistories" Width="1.5" PointX="4" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OASUModel.SubSystems" Width="1.5" PointX="0.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OASUModel.sysdiagrams" Width="1.5" PointX="7.125" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OASUModel.Users" Width="1.5" PointX="4" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OASUModel.Workplaces" Width="1.5" PointX="10.75" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="OASUModel.ps_acc" ManuallyRouted="false" />
+        <AssociationConnector Association="OASUModel.ssys_t_acc" ManuallyRouted="false" />
+        <AssociationConnector Association="OASUModel.dep_off" ManuallyRouted="false" />
+        <AssociationConnector Association="OASUModel.emp_dev" ManuallyRouted="false" />
+        <AssociationConnector Association="OASUModel.rec_dev" ManuallyRouted="false" />
+        <AssociationConnector Association="OASUModel.doc_t_doc" ManuallyRouted="false" />
+        <AssociationConnector Association="OASUModel.prg_doc" ManuallyRouted="false" />
+        <AssociationConnector Association="OASUModel.emp_usr" ManuallyRouted="false" />
+        <AssociationConnector Association="OASUModel.emp_wkr" ManuallyRouted="false" />
+        <AssociationConnector Association="OASUModel.off_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="OASUModel.rpoff_emp" ManuallyRouted="false" />
+        <AssociationConnector Association="OASUModel.off_wrk" ManuallyRouted="false" />
+        <AssociationConnector Association="OASUModel.prg_l_prg" ManuallyRouted="false" />
+        <AssociationConnector Association="OASUModel.prg_rec" ManuallyRouted="false" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

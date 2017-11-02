@@ -1,0 +1,47 @@
+﻿<Window x:Class="DP.View.ImportExportDB.ExportDBView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DP.View.ImportExportDB"
+        mc:Ignorable="d"
+        Title="ExportDBView" Height="472" Width="309">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition />
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="1" MinHeight="200" DataContext="{Binding Source=wd}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="2" CornerRadius="2" BorderBrush="Gray" Padding="0">
+                        <CheckBox   Margin="0" Height="30" Width="230" >
+                            <WrapPanel >
+                                <Label Content="Departments"  Padding="0,0,3,0"/>
+                                <Label Content="(" Padding="0"  />
+                                <Label Content="81" Padding="0"  />
+                                <Label Content=")" Padding="0" />
+                            </WrapPanel>
+                        </CheckBox>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+            <ListBoxItem/>
+            <ListBoxItem/>
+        </ListView>
+        <WrapPanel Grid.Row="0"  VerticalAlignment="Bottom">
+            <Button  Height="25" Command="{Binding ExitCommand}" Style="{StaticResource ButtonC}">
+                <CheckBox Content="Выделить все" IsChecked="True" IsEnabled="False"/>
+            </Button>
+            <Button Height="25"  Command="{Binding ExitCommand}" Style="{StaticResource ButtonC}" >
+                <CheckBox Content="Снять выделение" IsChecked="False" IsEnabled="False"/>
+            </Button>
+        </WrapPanel>
+        <Grid Grid.Row="2"  VerticalAlignment="Bottom">
+            <Button Content="Экспорт..." Command="{Binding ExitCommand}" Style="{StaticResource ButtonC}" HorizontalAlignment="Left"/>
+            <Button Content="Выйти" Command="{Binding ExitCommand}" Style="{StaticResource ButtonC}" HorizontalAlignment="Right"/>
+        </Grid>
+    </Grid>
+</Window>

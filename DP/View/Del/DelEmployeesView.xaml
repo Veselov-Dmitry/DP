@@ -1,0 +1,51 @@
+﻿<Window x:Class="DP.View.Del.DelEmployeesView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DP.View.Del"
+        mc:Ignorable="d"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        Title="Удалить работника" Height="auto"
+        Style="{StaticResource WindowC}"
+        WindowStartupLocation="{StaticResource WSL}">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Style="{StaticResource StackPanelC}" >
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Название бюро"></TextBlock>
+                <TextBox IsReadOnly="True" Text="{Binding Name_Office}" Width="150"/>
+                <WrapPanel Width="150">
+                    <TextBlock Text="Отдел: "/>
+                    <TextBlock Text="{Binding Path=Name_Department}"/>
+                </WrapPanel>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Профессия"></TextBlock>
+                <TextBox IsReadOnly="True" Text="{Binding Name_Profession}" Width="150"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Style="{StaticResource StackPanelC}" >
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Ф.И.О." />
+                <TextBox IsReadOnly="True" Text="{Binding Path=Full_Name_Employee}" Width="150"/>
+                <WrapPanel>
+                    <TextBlock Text="ID "/>
+                    <TextBlock Text="{Binding Path=Employee_ID}"/>
+                </WrapPanel>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Табельный номер" />
+                <TextBox IsReadOnly="True" Text="{Binding Path=Personnel_Number}" Width="150"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" >
+            <Button Content="Удалить" Command="{Binding DelCommand}" Style="{StaticResource ButtonC}"/>
+            <Button Content="Выйти" Command="{Binding ExitCommand}"  Style="{StaticResource ButtonC}"/>
+        </StackPanel>
+    </Grid>
+</Window>

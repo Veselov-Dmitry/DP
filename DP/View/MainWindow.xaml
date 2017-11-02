@@ -1,0 +1,97 @@
+﻿<Window x:Class="DP.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DP.View"
+        mc:Ignorable="d"
+        x:Name="Mw"
+        Visibility="Collapsed"
+        WindowStartupLocation="CenterScreen"
+        Title="DP" Height="auto" Width="860" >
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="F" Command="{Binding FindCommand}" CommandParameter="{Binding ElementName=MainFrame}"/>
+        <KeyBinding Modifiers="Ctrl" Key="P" Command="{Binding PrintCommand}" CommandParameter="{Binding ElementName=MainFrame}"/>
+        <KeyBinding Modifiers="Ctrl" Key="S" Command="{Binding PDFCommand}" CommandParameter="{Binding ElementName=MainFrame}"/>
+        <KeyBinding Key="F5" Command="{Binding RefreshDGCommand}" CommandParameter="{Binding ElementName=MainFrame}"/>
+        
+    </Window.InputBindings>
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="2">
+            <Menu DockPanel.Dock="Top" Background="LightGray">
+                <MenuItem Header="Файл">
+                    <MenuItem Header="Импорт (из *.dbf)..." Command="{Binding InportDBFCommand}" CommandParameter=""/>
+                    <MenuItem Header="Импорт базы..." Command="{Binding ImportDBCommand}" CommandParameter=""/>
+                    <MenuItem Header="Экспорт базы..." Command="{Binding ExportDBCommand}" CommandParameter=""/>
+                    <Separator/>
+
+                    <MenuItem Header="Выход" Command="{Binding ExitCommand}"/>
+                </MenuItem>
+                <MenuItem Header="Таблицы">
+                    <MenuItem Header="Обновить" Command="{Binding RefreshDGCommand}" CommandParameter="{Binding ElementName=MainFrame}"/>
+                    <Separator/>
+                    <MenuItem Header="Отделы" Command="{Binding DepartmentsCommand}" CommandParameter="{Binding ViewModelDepartments}"/>
+                    <MenuItem Header="Бюро" Command="{Binding GoToOfficesCommand}" CommandParameter="{Binding ViewModelOffices}"/>
+                    <MenuItem Header="Профессии" Command="{Binding GoToProfessionsCommand}" CommandParameter="{Binding ViewModelProfessions}"/>
+                    <MenuItem Header="Работники" Command="{Binding GoToEmployeesCommand}" CommandParameter="{Binding ViewModelEmployees}" />
+                    <MenuItem Header="Компьютеры" Command="{Binding GoToComputersCommand}" CommandParameter="{Binding ViewModelComputers}" />
+                    <MenuItem Header="Разработчики" Command="{Binding GoToDevelopersCommand}" CommandParameter="{Binding ViewModelDevelopers}" />
+                    <MenuItem Header="Типы документов" Command="{Binding GoToDocumentsTypesCommand}" CommandParameter="{Binding ViewModelDocumentsTypes}"/>
+                    <MenuItem Header="Документы" Command="{Binding GoToDocumentsCommand}" CommandParameter="{Binding ViewModelDocuments}"/>
+                    <MenuItem Header="ПС" Command="{Binding GoToPrgSystemsCommand}" CommandParameter="{Binding ViewModelPrgSystems}"/>
+                    <MenuItem Header="Языки прорамм" Command="{Binding GoToPrgLangsCommand}" CommandParameter="{Binding ViewModelPrgLangs}"/>
+                    <MenuItem Header="Записи изменений" Command="{Binding GoToRecordHistoriesCommand}" CommandParameter="{Binding ViewModelRecordHistories}"/>
+                    <MenuItem Header="Подсистемы" Command="{Binding GoToSubSystemsCommand}" CommandParameter="{Binding ViewModelSubSystems}"/>
+                    <MenuItem Header="Пользователи" Command="{Binding GoToUsersCommand}" CommandParameter="{Binding ViewModelUsers}"/>
+                    <MenuItem Header="Рабочие места" Command="{Binding GoToWorkplacesCommand}" CommandParameter="{Binding ViewModelWorkplaces}"/>
+                    <MenuItem Header="Права программ" Command="{Binding GoToAccesRightsCommand}" CommandParameter="{Binding ViewModelAccesRights}"/>
+                </MenuItem>
+                <MenuItem Header="Правка">
+                    <MenuItem  Command="{Binding FindCommand}" CommandParameter="{Binding ElementName=MainFrame}" Header="Поиск Ctrl+F"/>
+                    <MenuItem  Command="{Binding PrintCommand}" CommandParameter="{Binding ElementName=MainFrame}" Header="Печать Ctrl+P"/>
+                    <MenuItem  Command="{Binding PDFCommand}" CommandParameter="{Binding ElementName=MainFrame}" Header="Создать PDF Ctrl+S"/>
+                    
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <DockPanel x:Name="ContentGrid" Grid.Row="1"  Grid.Column="0" >
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
+                <StackPanel>
+                    <Button Content="Отделы" Command="{Binding GoToDepartmentsCommand}" CommandParameter="{Binding ViewModelDepartments}" Style="{StaticResource ButtonM}"/>
+                    <Button Content="Бюро" Command="{Binding GoToOfficesCommand}" CommandParameter="{Binding ViewModelOffices}"  Style="{StaticResource ButtonM}"/>
+                    <Button Content="Професии" Command="{Binding GoToProfessionsCommand}" CommandParameter="{Binding ViewModelProfessions}"  Style="{StaticResource ButtonM}"/>
+                    <Button Content="Работники" Command="{Binding GoToEmployeesCommand}" CommandParameter="{Binding ViewModelEmployees}" Style="{StaticResource ButtonM}"/>
+                    <Button Content="Компьютеры" Command="{Binding GoToComputersCommand}" CommandParameter="{Binding ViewModelComputers}" Style="{StaticResource ButtonM}"/>
+                    <Button Content="Разработчики" Command="{Binding GoToDevelopersCommand}" CommandParameter="{Binding ViewModelDevelopers}" Style="{StaticResource ButtonM}"/>
+                    <Button Content="Типы документов" Command="{Binding GoToDocumentsTypesCommand}" CommandParameter="{Binding ViewModelDocumentsTypes}" Style="{StaticResource ButtonM}"/>
+                    <Button Content="Документы" Command="{Binding GoToDocumentsCommand}" CommandParameter="{Binding ViewModelDocuments}" Style="{StaticResource ButtonM}"/>
+                    <Button Content="ПС" Command="{Binding GoToPrgSystemsCommand}" CommandParameter="{Binding ViewModelPrgSystems}" Style="{StaticResource ButtonM}"/>
+                    <Button Content="Языки прорам" Command="{Binding GoToPrgLangsCommand}" CommandParameter="{Binding ViewModelPrgLangs}" Style="{StaticResource ButtonM}"/>
+                    <Button Content="Записи изменений" Command="{Binding GoToRecordHistoriesCommand}" CommandParameter="{Binding ViewModelRecordHistories}" Style="{StaticResource ButtonM}"/>
+                    <Button Content="Подсистемы" Command="{Binding GoToSubSystemsCommand}" CommandParameter="{Binding ViewModelSubSystems}" Style="{StaticResource ButtonM}"/>
+                    <Button Content="Пользователи" Command="{Binding GoToUsersCommand}" CommandParameter="{Binding ViewModelUsers}" Style="{StaticResource ButtonM}"/>
+                    <Button Content="Рабочие места" Command="{Binding GoToWorkplacesCommand}" CommandParameter="{Binding ViewModelWorkplaces}" Style="{StaticResource ButtonM}"/>
+                    <Button Content="Права программ" Command="{Binding GoToAccesRightsCommand}" CommandParameter="{Binding ViewModelAccesRights}" Style="{StaticResource ButtonM}"/>
+                </StackPanel>
+            </ScrollViewer>
+
+        </DockPanel>
+
+        <Frame x:Name="MainFrame" Grid.Row="1"  Grid.Column="1" Background="DarkGray"  NavigationUIVisibility="Hidden">
+        </Frame>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
+            <Button Content="Выход" Command="{Binding ExitCommand}" HorizontalAlignment="Right"  Style="{StaticResource ButtonC}"/>
+        </StackPanel>
+    </Grid>
+</Window>

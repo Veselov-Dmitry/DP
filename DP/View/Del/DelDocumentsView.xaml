@@ -1,0 +1,51 @@
+﻿<Window x:Class="DP.View.Del.DelDocumentsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DP.View.Del"
+        mc:Ignorable="d"
+        Title="Удалить документ" Height="auto"
+        Style="{StaticResource WindowC}"
+        WindowStartupLocation="{StaticResource WSL}">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Style="{StaticResource StackPanelC}" >
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Название программы"></TextBlock>
+                <TextBox Text="{Binding Path=PS_Name}" IsReadOnly="True" Width="150" Height="22"/>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Тип документа"></TextBlock>
+                <TextBox  Text="{Binding Path=Name_document_type}" IsReadOnly="True" Width="150" Height="22"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Style="{StaticResource StackPanelC}">
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Номер документа"/>
+                <TextBox Text="{Binding Path=Document_Number, Mode=TwoWay, IsAsync=True}" Width="150" IsReadOnly="True" MaxLength="15" Height="22"/>
+                <StackPanel>
+                    <TextBlock Text="Файл"/>
+                    <WrapPanel Width="150" >
+                        <TextBox Text="{Binding Path=DocumentFilePath}" Width="150" IsReadOnly="True" Foreground="DarkGray" Height="22"/>
+                    </WrapPanel>
+                    <TextBlock Text="{Binding Path=Length}" Foreground="Green"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StackPanelCV}" >
+                <TextBlock Text="Дата документа"/>
+                <DatePicker SelectedDate="{Binding Path=Document_Date}" IsEnabled="False" Width="150"/>
+                <TextBlock Text="ID документа "/>
+                <TextBlock Text="{Binding Path=Document_ID}"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" >
+            <Button Content="Удалить" Command="{Binding DelCommand}" Style="{StaticResource ButtonC}"/>
+            <Button Content="Выйти" Command="{Binding ExitCommand}"  Style="{StaticResource ButtonC}"/>
+        </StackPanel>
+    </Grid>
+</Window>
